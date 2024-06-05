@@ -13,7 +13,17 @@ endif()
 set(PCL_EXAMPLES_ALL_TARGETS)
 
 # This looks for all examples/XXX/CMakeLists.txt
-file (GLOB examples_sbudirs */CMakeLists.txt)
+set(examples_sbudirs
+  common/CMakeLists.txt
+  features/CMakeLists.txt
+  filters/CMakeLists.txt
+  geometry/CMakeLists.txt
+  keypoints/CMakeLists.txt
+  outofcore/CMakeLists.txt
+  segmentation/CMakeLists.txt
+  stereo/CMakeLists.txt
+  surface/CMakeLists.txt
+)
 # Extract only relevant XXX and append it to PCL_EXAMPLES_SUBDIRS
 foreach(subdir ${examples_sbudirs})
   # PATH of get_filename_component has problem dealing with windows shared folders "//xxx.xxx.xxx.xxx/folder"
